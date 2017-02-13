@@ -1,0 +1,403 @@
+<!doctype html>
+<html><head><link rel="stylesheet" href="css/materialize.css"><link rel="stylesheet" href="css/materialize.min.css"><link rel="stylesheet" href="js/extras.css"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta charset="utf-8"><title>KEC GPA CGPA Calculator</title>
+
+</head><body>
+<nav class="light-green"><center>KONGU ENGINEERING COLLEGE GPA AND CGPA CALCULATOR</center></nav>
+<div class="container"><br>
+<div class="center"><img src="images/center.jpg" /></div>
+<form id="kongu-form">
+ <div class="input-field s12">
+    <select id="dep">
+      <option value="" disabled selected>Choose your Department</option>
+      <option value="0">Civil Engineering</option>
+      <option value="1">Computer Science and Engineering</option>
+      <option value="2">Chemical Engineering</option>
+      <option value="3">Electronics and Communication Engineering</option>
+      <option value="4">Electrical Engineering</option>
+      <option value="5">Electronics and Instrumentation Engineering</option>
+      <option value="6">information Technology</option>
+      <option value="7">Food Tecnology</option>
+      <option value="8">Mechanical Engineering</option>
+      <option value="9">Mechatronics</option>
+      <option value="10">Master of Business Administration(MBA)</option>
+      <option value="11">Master of Computer Application(MCA)</option>
+    </select>
+    <label>Select Your Department</label>
+  </div>
+  
+  <br>
+  <div class="input-field col s12">
+    <select id="regulation">
+      <option value="" disabled selected>Choose your Regulation</option>
+      <option value="2014">2014</option>
+      <option value="2011">2011</option>
+      <option value="2009">2009</option>
+    </select>
+    <label>Select Your Regulation</label>
+  </div><br>
+  <div class="row">
+  <div class="col s6 center"><a onClick="value()" class="waves-effect waves-light btn-large" href="#gpa">GPA</a></div>
+  
+  <div class="modal" id="gpa">
+  <div class="modal-content">
+  <h4>GPA Calulator -KEC</h4>
+  <div id="dep_modal"></div>
+  
+   <table cellpadding="5" cellspacing="5" >
+   
+   <tr align="center">
+   <td>Subject</td>
+   <td>Credits</td>
+   <td>Grade</td>
+   </tr>
+   
+      <tr align="center">
+   <td>Subject 1</td>
+   <td><select id="s1_c" onChange="gpa()">
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="9">9</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="s1_g" onChange="gpa()">
+  <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+   <tr align="center">
+   <td>Subject 2</td>
+   <td><select id="s2_c" onChange="gpa()">
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="9">9</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="s2_g" onChange="gpa()">
+  <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+   <tr align="center">
+   <td>Subject 3</td>
+   <td><select id="s3_c" onChange="gpa()">
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="9">9</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="s3_g" onChange="gpa()">
+  <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+   <tr align="center">
+   <td>Subject 4</td>
+   <td><select id="s4_c" onChange="gpa()">
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="9">9</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="s4_g" onChange="gpa()">
+   <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+   <tr align="center">
+   <td>Subject 5</td>
+   <td><select id="s5_c" onChange="gpa()">
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="9">9</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="s5_g" onChange="gpa()">
+  <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+   <tr align="center">
+   <td>Subject 6</td>
+   <td><select id="s6_c" onChange="gpa()">
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="9">9</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="s6_g" onChange="gpa()">
+   <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+
+   <tr align="center">
+   <td colspan="3">Select Laboratory Grades</td>
+   </tr>
+
+
+   <tr align="center">
+   <td>Lab 1</td>
+   <td><select id="l1_c" onChange="gpa()">
+   <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="l1_g" onChange="gpa()">
+   <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+   <tr align="center">
+   <td>Lab 2</td>
+  <td><select id="l2_c" onChange="gpa()">
+   <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="l2_g" onChange="gpa()">
+   <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+   <tr align="center">
+   <td>Lab 3</td>
+   <td><select id="l3_c" onChange="gpa()">
+   <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="l3_g" onChange="gpa()">
+   <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+   <tr align="center">
+   <td>Lab 4</td>
+  <td><select id="l4_c" onChange="gpa()">
+   <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="0">NA</option>
+   </select></td>
+   <td><select id="l4_g" onChange="gpa()">
+   <option value="10">S</option>
+   <option value="9">A</option>
+   <option value="8">B</option>
+   <option value="7">C</option>
+   <option value="6">D</option>
+   <option value="5">E</option>
+   <option value="0">RA</option>
+   <option value="ab">AB</option>
+   <option value="wh">WH</option>
+   <option value="w">W</option>
+   </select></td>
+   </tr>
+
+
+   
+   </table>
+  
+          
+  
+  
+  </div>
+  
+  <div class="total_gpa center" style="color:red;" id="total">GPA : 0</div>
+
+  
+  <div class="modal-footer">
+   <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+  </div>
+  </div>
+  
+  
+  <div class="col s6 center"><a class="waves-effect waves-light btn-large" onClick="cgpa_calc()" href="#cgpa">CGPA</a></div>
+  
+  
+  <div class="modal" id="cgpa">
+  <div class="modal-content">
+  <h4>GPA Calulator -KEC</h4>
+  <div id="dep_modal"></div>
+  
+   <table cellpadding="5" cellspacing="5" >
+   <tr align="center">
+   <td>Grade points</td>
+   <td>Credits</td>
+   </tr>
+   
+   <tr align="center">
+<td><div class="input-field"><input id="cr1" type="text" onChange="cgpa_calc()" ><label for="cr1" >1st sem GPA</label> </div></td>
+   <td><div id="gpc1"></div></td>
+   </tr>
+   
+    <tr align="center">
+<td><div class="input-field"><input id="cr2" type="text" onChange="cgpa_calc()"><label for="cr2">2nd sem GPA</label> </div></td>
+   <td><div id="gpc2"></div></td>
+   </tr>
+   
+    <tr align="center">
+<td><div class="input-field"><input id="cr3" type="text" onChange="cgpa_calc()"><label for="cr3">3rd sem GPA</label> </div></td>
+   <td><div id="gpc3"></div></td>
+   </tr>
+   
+    <tr align="center">
+<td><div class="input-field"><input id="cr4" type="text" onChange="cgpa_calc()"><label for="cr4">4th sem GPA</label> </div></td>
+   <td><div id="gpc4"></div></td>
+   </tr>
+   
+    <tr align="center">
+<td><div class="input-field"><input id="cr5" type="text" onChange="cgpa_calc()"><label for="cr5">5th sem GPA</label> </div></td>
+   <td><div id="gpc5"></div></td>
+   </tr>
+   
+    <tr align="center">
+<td><div class="input-field"><input id="cr6" type="text"  onChange="cgpa_calc()"><label for="cr6">6th sem GPA</label> </div></td>
+   <td><div id="gpc6"></div></td>
+   </tr>
+   
+    <tr align="center">
+<td><div class="input-field"><input id="cr7" type="text"  onChange="cgpa_calc()"><label for="cr7">7th sem GPA</label> </div></td>
+   <td><div id="gpc7"></div></td>
+   </tr>
+   
+    <tr align="center">
+<td><div class="input-field"><input id="cr8" type="text"  onChange="cgpa_calc()"><label for="cr8">8th sem GPA</label> </div></td>
+   <td><div id="gpc8"></div></td>
+   </tr>
+   
+   </table>
+  <div id="total_cgpa" class="center" style="color:red"></div>
+  </div>
+  <div class="modal-footer">
+   <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+  </div>
+  
+  </div>
+  
+  
+  </div>
+  </div>
+  <nav class=" page-footer light-green " id='footer' style='position: fixed; display: none;'><center>&copy; All Rights Reserved <div class="right">Designed by <a href="http://sudheesh.16mb.com">Sudheesh S &nbsp;&nbsp;</a></div></center></nav>
+  
+  
+  
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/extra.js"></script>
+  
+  <script>
+     $(document).ready(function() {
+        $('select').material_select();
+    });
+	$(function(){
+    $(window).resize(function(){
+        placeFooter();
+    });
+    placeFooter();
+    // hide it before it's positioned
+    $('#footer').css('display','inline');
+	
+});
+
+function placeFooter() {    
+    var windHeight = $(window).height();
+    var footerHeight = $('#footer').height();
+    var offset = parseInt(windHeight) - parseInt(footerHeight);
+    $('#footer').css('top',offset);
+}
+
+	
+  $(document).ready(function(){
+     $('.modal').modal();
+  });
+  
+  
+  
+ 
+
+      
+  </script>
+
+</body>
+</html>
